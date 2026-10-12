@@ -277,6 +277,23 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
 .status [data-p]{opacity:0!important}.status [data-p="4"]{opacity:1!important}
 @media (max-width:860px){.s-tag .pin{padding-top:72px;padding-bottom:72px}.tag-copy .lede{display:block}.tag-wrap .fl{display:none}}
 .man{max-width:100%;width:fit-content}.man p{max-width:100%}.man .fill{width:auto!important;height:auto!important;inset:0}
+/* occasions: static section */
+.s-season{height:auto}
+.s-season .pin{position:relative;height:auto;overflow:hidden;min-height:0;padding:clamp(160px,22vw,300px) var(--gut) clamp(56px,7vw,96px)}
+.contours{transform:none}
+.chap{opacity:1}
+@media (max-width:860px){.chap p{display:block}}
+/* how to order */
+.order{margin-top:56px;background:var(--paper);border:1.5px solid var(--ink);padding:clamp(22px,4vw,44px);display:grid;gap:26px}
+.order-h .lbl{color:var(--muted)}
+.order-h .disp{font-size:clamp(30px,3.6vw,52px);color:var(--berry);margin-top:6px}
+.order-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.order-steps li{display:flex;gap:14px;border-top:1px solid var(--hair);padding-top:14px}
+.order-steps b{font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--berry);padding-top:4px}
+.order-steps h4{margin:0 0 6px;font-family:'Gloock',serif;font-weight:400;font-size:22px;text-transform:uppercase;line-height:1.1}
+.order-steps p{margin:0;color:var(--muted)}
+.order .btn{justify-self:start}
+@media (max-width:860px){.order-steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -296,7 +313,7 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
       <li><a href="#faq">FAQ</a></li>
     </ul>
   </nav>
-  <a class="btn ghost" href="#pricing">Order a bouquet</a>
+  <a class="btn ghost" href="#order">Order a bouquet</a>
 </header>
 
 <!-- 1 · HERO -->
@@ -312,7 +329,7 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
       <p class="sub">Lilies, tulips and pearl blooms twisted by hand. Bouquets that never wilt, never need water, and keep their colour for years.</p>
       <div class="ctas">
         <a class="btn" href="#shop">See the collection</a>
-        <a class="btn ghost" href="#pricing">Order a bouquet</a>
+        <a class="btn ghost" href="#order">Order a bouquet</a>
       </div>
     </div>
     <div class="hero-meta lbl">
@@ -429,14 +446,14 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
         <li class="cue"><b>01</b><span>Pick your flowers</span></li>
         <li class="cue"><b>02</b><span>Choose your colours</span></li>
         <li class="cue"><b>03</b><span>Twist, shape &amp; wrap</span></li>
-        <li class="cue"><b>04</b><span>Note card &amp; pickup</span></li>
+        <li class="cue"><b>04</b><span>Note card &amp; shipping</span></li>
       </ol>
       <p class="status lbl" aria-live="polite">
         <span data-p="0">● Waiting for your order</span>
         <span data-p="1">● Stems selected</span>
         <span data-p="2">● Matching your shades</span>
         <span data-p="3">● Twisting petals · wrapping</span>
-        <span data-p="4">● Ready for pickup</span>
+        <span data-p="4">● Ready to ship</span>
       </p>
     </div>
     <div class="tag-wrap">
@@ -475,7 +492,7 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
           <div class="trow"><span class="k">Flowers</span><span class="v"><span class="a">pending</span><span class="b">Lilies + lavender</span></span></div>
           <div class="trow"><span class="k">Shades</span><span class="v"><span class="a">pending</span><span class="b">Blush · lilac · white</span></span></div>
           <div class="trow"><span class="k">Wrap</span><span class="v"><span class="a">pending</span><span class="b">Pink wrap · bow</span></span></div>
-          <div class="trow"><span class="k">Ready</span><span class="v"><span class="a">pending</span><span class="b">[PICKUP DATE]</span></span></div>
+          <div class="trow"><span class="k">Shipping</span><span class="v"><span class="a">pending</span><span class="b">Canada-wide · $9.99</span></span></div>
         </div>
         <div class="perf" aria-hidden="true"><span class="lbl">Keep with your gift</span></div>
       </div>
@@ -528,10 +545,20 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
         <tr class="rv"><td>Pearl Blossom</td><td>Two-tone petal flower with pearl tips and centre</td><td>1 day</td><td class="pr"><span style="letter-spacing: 2.38px">$14.99 AND ABOVE</span></td></tr>
         <tr class="rv"><td>Pearl Lotus Tealight</td><td>Petal lotus on a wooden base with LED tealight</td><td>2 days</td><td class="pr"><span style="letter-spacing: 2.38px">$19.99 AND ABOVE</span></td></tr>
         <tr class="rv"><td>40 Flower Tutorials</td><td>Printable PDF guide, instant download</td><td>Instant</td><td class="pr"><span style="letter-spacing: 2.38px">$19.99 AND ABOVE</span></td></tr>
+        <tr class="rv"><td>Shipping</td><td>Flat rate, anywhere in Canada</td><td>—</td><td class="pr">$9.99</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="tbl-note lbl rv">Custom colours and bulk orders · ask for a quote</p>
+  <p class="tbl-note lbl rv">Shipping $9.99 Canada-wide · custom colours and bulk orders, ask for a quote</p>
+  <div class="order rv" id="order">
+    <div class="order-h"><p class="lbl">How to order</p><h3 class="disp">Order by email</h3></div>
+    <ol class="order-steps">
+      <li><b>01</b><div><h4>Email your order</h4><p>Send your reference images, the pieces you want and your shipping address to <a href="mailto:blushberrywork@gmail.com?subject=Blushberry%20order">blushberrywork@gmail.com</a>.</p></div></li>
+      <li><b>02</b><div><h4>Pay for your order</h4><p>Your pieces plus a flat $9.99 shipping anywhere in Canada.</p></div></li>
+      <li><b>03</b><div><h4>Get your confirmation</h4><p>Once your payment is processed, we email you a confirmation with your estimated delivery date.</p></div></li>
+    </ol>
+    <a class="btn" href="mailto:blushberrywork@gmail.com?subject=Blushberry%20order">Email your order</a>
+  </div>
 </section>
 
 <!-- 7 · FAQ -->
@@ -545,8 +572,8 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
     <details class="rv"><summary>Do they need water or care?<i aria-hidden="true">+</i></summary><p>No water and no sunlight. Keep them dry and dust them now and then with a soft brush or a hair dryer on the cool setting.</p></details>
     <details class="rv"><summary>How long do they last?<i aria-hidden="true">+</i></summary><p>Kept away from damp and strong direct sun, they hold their shape and colour for years.</p></details>
     <details class="rv"><summary>Can I choose my own colours?<i aria-hidden="true">+</i></summary><p>Yes. Send a photo, an outfit or a palette and we will match the stems as closely as our chenille shades allow.</p></details>
-    <details class="rv"><summary>How far ahead should I order?<i aria-hidden="true">+</i></summary><p>[X] days for single stems and [X] days for bouquets. Festive weeks fill up first, so order early for Diwali and Valentine's.</p></details>
-    <details class="rv"><summary>Do you deliver?<i aria-hidden="true">+</i></summary><p>[PICKUP / DELIVERY / SHIPPING DETAILS]</p></details>
+    <details class="rv"><summary>How far ahead should I order?<i aria-hidden="true">+</i></summary><p>Single stems and decor pieces take about 1 day to make and bouquets about 2 days, plus shipping time. Festive weeks fill up first, so order early for Diwali and Valentine's.</p></details>
+    <details class="rv"><summary>Do you deliver?<i aria-hidden="true">+</i></summary><p>Yes, we ship anywhere in Canada for a flat $9.99. Once your payment is processed, we email you a confirmation with your estimated delivery date.</p></details>
     <details class="rv"><summary>Is the tutorial guide a physical book?<i aria-hidden="true">+</i></summary><p>No. It is a printable PDF you download right after checkout and print at home.</p></details>
   </div>
 </section>
@@ -564,7 +591,7 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
     </div>
     <div class="foot-cols">
       <div class="rv"><p class="lbl">Shop</p><a href="#shop">Bouquets</a><a href="#shop">Single stems</a><a href="#shop">Tutorial guide</a></div>
-      <div class="rv"><p class="lbl">Order</p><a href="#pricing">Price list</a><a href="#how">How it works</a><a href="#faq">FAQ</a></div>
+      <div class="rv"><p class="lbl">Order</p><a href="#pricing">Price list</a><a href="#order">How to order</a><a href="#how">How it works</a><a href="#faq">FAQ</a></div>
       <div class="rv"><p class="lbl">Say hello</p><a href="https://www.instagram.com/blushberryflowers/" target="_blank" rel="noopener">Instagram @blushberryflowers</a><a href="mailto:blushberrywork@gmail.com">blushberrywork@gmail.com</a></div>
     </div>
   </div>
