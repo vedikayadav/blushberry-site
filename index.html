@@ -294,6 +294,11 @@ html.bb-js .bb .split.in .w{opacity:1;transform:none}
 .order-steps p{margin:0;color:var(--muted)}
 .order .btn{justify-self:start}
 @media (max-width:860px){.order-steps{grid-template-columns:1fr}}
+/* collection: keep heading clear of the cards */
+.rail-head{position:relative;z-index:3}
+.rail-win{align-items:flex-start;padding-top:24px}
+.card .plate{height:clamp(170px,calc(100vh - 540px),420px);height:clamp(170px,calc(100svh - 540px),420px)}
+@media (max-height:760px){.card .cb>p:not(.lbl){display:none}}
 </style>
 </head>
 <body>
